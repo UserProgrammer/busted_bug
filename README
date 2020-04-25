@@ -1,0 +1,50 @@
+Lua Version: Lua 5.3.3  Copyright (C) 1994-2016 Lua.org, PUC-Rio
+Busted Version: 2.0.0-0
+Operating System: Ubuntu 18.04.4 LTS (Bionic Beaver)
+
+How to Reproduce Bug:
+
+1) In the project's root directory, execute `busted --directory=./`. This will output the print statement from foo(), as expected.
+
+2) In the project's root directory, execute `busted --directory=./tests`.
+
+Expected output:
+To see print statement from foo().
+
+Actual output:
+0 successes / 0 failures / 1 error / 0 pending : 0.000969 seconds
+
+Error → spec/test2_spec.lua @ 1
+suite spec/test2_spec.lua
+spec/test2_spec.lua:1: module '../../main' not found:No LuaRocks module found for ../../main
+	no field package.preload['../../main']
+	no file './src///////main.lua'
+	no file './src///////main///////main.lua'
+	no file './src///////main/init.lua'
+	no file '/home/michael/.luarocks/share/lua/5.3///////main.lua'
+	no file '/home/michael/.luarocks/share/lua/5.3///////main/init.lua'
+	no file '/usr/local/share/lua/5.3///////main.lua'
+	no file '/usr/local/share/lua/5.3///////main/init.lua'
+	no file '/usr/local/lib/lua/5.3///////main.lua'
+	no file '/usr/local/lib/lua/5.3///////main/init.lua'
+	no file '/usr/share/lua/5.3///////main.lua'
+	no file '/usr/share/lua/5.3///////main/init.lua'
+	no file './//////main.lua'
+	no file './//////main/init.lua'
+	no file './csrc///////main.so'
+	no file './csrc///////main///////main.so'
+	no file '/home/michael/.luarocks/lib/lua/5.3///////main.so'
+	no file '/usr/local/lib/lua/5.3///////main.so'
+	no file '/usr/lib/x86_64-linux-gnu/lua/5.3///////main.so'
+	no file '/usr/lib/lua/5.3///////main.so'
+	no file '/usr/local/lib/lua/5.3/loadall.so'
+	no file './//////main.so'
+	no file './csrc/.so'
+	no file './csrc//.so'
+	no file '/home/michael/.luarocks/lib/lua/5.3/.so'
+	no file '/usr/local/lib/lua/5.3/.so'
+	no file '/usr/lib/x86_64-linux-gnu/lua/5.3/.so'
+	no file '/usr/lib/lua/5.3/.so'
+	no file '/usr/local/lib/lua/5.3/loadall.so'
+	no file './.so'
+
